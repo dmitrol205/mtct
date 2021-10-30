@@ -68,7 +68,7 @@ local vehFill=function(brec)
 			return true
 		end
 		m00=m0
-		m0=addRecordUnder(m0,'+10',false,'hotfixOffset(+10)',{})
+		m0=addRecordUnder(m0,'+10',false,'hotfixOffset(+10)',{})--after 0.5.23
 		m0.Options='[moAllowManualCollapseAndExpand,moManualExpandCollapse]'
 
 
@@ -140,12 +140,22 @@ local vehFill=function(brec)
 	m00.Collapsed=true
 	--tunning +a98..+aa4,+abc change like in own
 end
+local humFill=function(brec)
+	local m0,m1,m2,m3,m4,m00=nil,nil,nil,nil,nil,nil
+	m0=addRecordUnder(brec,'+0',true,'human',{0})
+	m0.Options='[moAllowManualCollapseAndExpand,moManualExpandCollapse]'
+		m1=addRecordUnder(m0,'+50',true,'selfID',{})
+		m1=addRecordUnder(m0,'+670',true,'pos',{},vtSingle)
+		m1=addRecordUnder(m0,'+674',true,'pos',{},vtSingle)
+	m0.Collapsed=true
+end
 local vehicleStructFill=function(baseAddress)
 	local myad=AddressList.getMemoryRecordByDescription('userDriverInVehicle')
 	--myad.Type=vtGrouped
 	--local vehparts='39:Transmission\n*:undeclared'
 	myad.ShowAsHex=true
 	vehFill(myad)
+	humFill(myad)
 end
 local valueTable={{name='userDriverInVehicle',value='488B8B500200004885C974??4885F6',freeze=false,setValue=nil,additionalf=vehicleStructFill,regsf='RBX+592'}}
 function valueGatherer(key,value,isfreeze,setValue,afterCall,regsf)

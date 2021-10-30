@@ -8,6 +8,31 @@ table={{name='nearestVehicleTemperatures',value='F30F109B78020000440F28C3'}
 {name='someVehArray',value='660F1F840000000000498B06488D3CF0488B04F0483B05'}--next 2 instruction
 {name='garageVehNamePlacing',value='4C8B00498BD4488BC841FF5030'}--next 3 instruction
 {name='someOuterGarageVehNamePlacing',value='F3440F114C2420448BC7488BCEE8'}--next 3 instruction
+{name='humanNames',value='488B16660F1F8400000000004863C8488D044948391CC2488D0CC2741B'}--one of four instructions is pointer to array--298c47c0+18*1d+8
+--[[<?xml version="1.0" encoding="utf-8"?>
+<CheatTable>
+  <CheatEntries>
+    <CheatEntry>
+      <ID>105</ID>
+      <Description>"No description"</Description>
+      <LastState RealAddress="11915EA0"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>String</VariableType>
+      <Length>10</Length>
+      <Unicode>1</Unicode>
+      <CodePage>0</CodePage>
+      <ZeroTerminate>1</ZeroTerminate>
+      <Address>298c47c0+36*8+8</Address>
+      <Offsets>
+        <Offset>0</Offset>
+        <Offset>0</Offset>
+        <Offset>8</Offset>
+        <Offset>8</Offset>
+      </Offsets>
+    </CheatEntry>
+  </CheatEntries>
+</CheatTable>
+]]--
 }
 	local ms=createMemScan()
 	ms.newScan()
